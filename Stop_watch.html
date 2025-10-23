@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+body {
+    background: url("https://img.itch.zone/aW1nLzE3NjUxOTcwLmpwZw==/508x254%23mb/S%2FeLhF.jpg") center center / cover no-repeat;
+    height: 700px;
+    margin: 0;
+    padding: 0;
+}
+
+.butn {
+  background-color: blueviolet;
+  padding: 15px;
+  width: 180px;
+  border: 1px solid black;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  margin: 5px;
+}
+
+.three {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 255, 255, 0.7); /* Transparent aqua */
+    height: 300px;
+    width: 600px;
+    margin: 200px auto 0 auto;
+    padding-top: 30px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.one {
+    padding-bottom: 20px;
+}
+
+.iiii {
+    background-color: aliceblue;
+    width: 500px;
+    padding: 20px;
+    font-size: 24px;
+    text-align: center;
+}
+
+
+    </style>
+</head>
+<body>
+            <div class="three">
+   <div class="one"> <button class="iiii" id="sum">0</button></div>
+   <div class="two">
+    <button class="butn" id="high" onclick="star()">start</button>
+    <button  class="butn" onclick="sto()">stop</button>
+    <button class="butn" onclick="restart()">restart</button>
+    </div>
+            </div>
+    <script>
+        const data=document.getElementById("sum");
+        const shar=document.getElementById("high");
+       let time;
+        let count=0;
+        function star(){
+           
+            
+     time = setInterval(()=>{
+             console.log(count);
+              data.innerHTML=count
+             
+              data.style="color:red;"
+              count++;
+             
+        },1000);
+    }   
+    
+        function sto(){
+           
+                clearInterval(time);
+                console.log("stoped");      
+        }
+     function restart() {
+    count = 0;
+    data.innerHTML = count;
+}
+
+
+      function greet(name,B){
+        console.log("Hi"+name);
+        B();
+      }
+     function sayBye(){
+        console.log("Bye!");
+     }
+     greet("hiii",sayBye);
+    </script>
+</body>
+</html>
